@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Донат Lfs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-text">Донатик<span class="highlight">lfs</span></span>
+            </a>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">Главная</a></li>
+                <li><a href="about.html#about" class="nav-link">Обо мне</a></li>
+                <li><a href="about.html#skills" class="nav-link">Навыки</a></li>
+                <li><a href="about.html#memes" class="nav-link">Мемы</a></li>
+                <li><a href="about.html#contact" class="nav-link">Контакты</a></li>
+                <li><a href="index.html" class="nav-link">Стартовая страница</a></li>
+                <li><a href="https://www.donationalerts.com/r/love_of_solitude" class="nav-link">donationalerts</a></li>
+                <li class="donate-btn"><a href="about" class="nav-link donate">Визитка</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="donate-hero">
+        <div class="donate-hero-content">
+            <h1>Поддержать <span class="highlight">проект</span></h1>
+            <p>Ваша поддержка поможет мне развиваться как разработчику и создавать новые проекты</p>
+        </div>
+    </section>
+
+    <section class="donate-options-section">
+        <div class="container">
+            <h2>Donation<span class="highlight">Alerts</span></h2>
+            <p class="section-description">Вы можете поддержать меня через платформу donationalerts:</p>
+
+
+                <div class="platform-card donation-alerts">
+                    <div class="platform-logo">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>DonationAlerts</h3>
+                    <p>Отправьте разовый донат через DonationAlerts с вашим сообщением</p>
+                    <div class="platform-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Разовые пожертвования</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Публичное сообщение</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Быстрая поддержка</span>
+                        </div>
+                    </div>
+                    <a href="https://www.donationalerts.com/" target="button" class="platform-button donation-alerts-button">
+                        <span>Поддержать на DonationAlerts</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 #LFS. Все права защищены.</p>
+            <div class="social-links">
+                <a href="https://github.com/dsgjhf"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/lfscyapbot"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Скрипт для копирования криптоадресов
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const address = this.getAttribute('data-address');
+                navigator.clipboard.writeText(address).then(() => {
+                    // Изменяем иконку на галочку
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+
+                    // Возвращаем исходную иконку через 2 секунды
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+            });
+        });
+
+        // Скрипт для FAQ аккордеона
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+
+                // Закрываем другие открытые вопросы
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Кнопка "Наверх"
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
+

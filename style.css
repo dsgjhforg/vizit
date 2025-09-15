@@ -488,7 +488,7 @@ footer {
 /* Кнопка "Наверх" */
 .back-to-top {
     position: fixed;
-    bottom: 60px;
+    bottom: 900px;
     right: 30px;
     width: 50px;
     height: 50px;
@@ -1452,4 +1452,5 @@ footer {
         padding: 2rem;
     }
 }
+
 
